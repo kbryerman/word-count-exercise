@@ -6,3 +6,23 @@
 // 6. If the char count is between 141 and 160 chars, display Textable
 // 7. If the char count is more than 160 chars, display Just Send an Email
 
+$(document).ready(function () {
+
+$("textarea").keyup(function() {
+
+var len = $(this).val().length;
+$('.char-count').text(len);
+
+
+    if (len <= 140) {
+    $('.response').text('Tweetable');
+  }
+        else if (len >=141 && len <160) {
+            $('.response').text('Textable');
+        }
+        else {
+                $('.response').text('Just Send An Email');
+            }
+});
+
+});
